@@ -63,6 +63,7 @@ importers:
 
   ../../lib/components:
     specifiers:
+      '@playwright/experimental-ct-react': ^1.37.1
       '@storybook/addon-essentials': ^7.4.0
       '@storybook/addon-interactions': ^7.4.0
       '@storybook/addon-links': ^7.4.0
@@ -89,6 +90,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
+      '@playwright/experimental-ct-react': 1.37.1
       '@storybook/addon-essentials': 7.4.0_ca9120ce38aeef3048bcd10528a4fb56
       '@storybook/addon-interactions': 7.4.0_ca9120ce38aeef3048bcd10528a4fb56
       '@storybook/addon-links': 7.4.0_react-dom@18.2.0+react@18.2.0
@@ -2591,6 +2593,63 @@ packages:
     dev: true
     optional: true
 
+  /@playwright/experimental-ct-core/1.37.1:
+    resolution:
+      {
+        integrity: sha512-3OmhDzrIAcVQlyVHmyaVtzcht/OUEH47uvwPh/rQmz/CrvB6zHMxH/7dIo6SCswMbCFkACepbqGmTW4HjW+yeQ==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dependencies:
+      '@playwright/test': 1.37.1
+      playwright-core: 1.37.1
+      vite: 4.4.9
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - terser
+    dev: true
+
+  /@playwright/experimental-ct-react/1.37.1:
+    resolution:
+      {
+        integrity: sha512-Uhw2sBdMPltkENPuNiuxjwkyjv4mpkPB3lVbUjTpK2lJtE7lVunj454OVa3v0wrHlavkAUK1e8OOFdkT860WWQ==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dependencies:
+      '@playwright/experimental-ct-core': 1.37.1
+      '@vitejs/plugin-react': 4.0.4
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - vite
+    dev: true
+
+  /@playwright/test/1.37.1:
+    resolution:
+      {
+        integrity: sha512-bq9zTli3vWJo8S3LwB91U0qDNQDpEXnw7knhxLM0nwDvexQAwx9tO8iKDZSqqneVq+URd/WIoz+BALMqUTgdSg==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dependencies:
+      '@types/node': 20.5.9
+      playwright-core: 1.37.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /@radix-ui/number/1.0.1:
     resolution:
       {
@@ -5029,6 +5088,23 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5_@babel+core@7.22.15
       '@babel/plugin-transform-react-jsx-source': 7.22.5_@babel+core@7.22.15
       magic-string: 0.27.0
+      react-refresh: 0.14.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vitejs/plugin-react/4.0.4:
+    resolution:
+      {
+        integrity: sha512-7wU921ABnNYkETiMaZy7XqpueMnpu5VxvVps13MjmCo+utBdD79sZzrApHawHtVX66cCJQQTXFcjH0y9dSUK8g==,
+      }
+    engines: { node: ^14.18.0 || >=16.0.0 }
+    peerDependencies:
+      vite: ^4.2.0
+    dependencies:
+      '@babel/core': 7.22.15
+      '@babel/plugin-transform-react-jsx-self': 7.22.5_@babel+core@7.22.15
+      '@babel/plugin-transform-react-jsx-source': 7.22.5_@babel+core@7.22.15
       react-refresh: 0.14.0
     transitivePeerDependencies:
       - supports-color
@@ -7569,6 +7645,16 @@ packages:
         integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==,
       }
 
+  /fsevents/2.3.2:
+    resolution:
+      {
+        integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==,
+      }
+    engines: { node: ^8.16.0 || ^10.6.0 || >=11.0.0 }
+    os: [darwin]
+    dev: true
+    optional: true
+
   /fsevents/2.3.3:
     resolution:
       {
@@ -9938,6 +10024,15 @@ packages:
     engines: { node: '>=10' }
     dependencies:
       find-up: 5.0.0
+    dev: true
+
+  /playwright-core/1.37.1:
+    resolution:
+      {
+        integrity: sha512-17EuQxlSIYCmEMwzMqusJ2ztDgJePjrbttaefgdsiqeLWidjYz9BxXaTaZWxH1J95SHGk6tjE+dwgWILJoUZfA==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
     dev: true
 
   /polished/4.2.2:

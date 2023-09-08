@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 interface MyButtonProps {
   children: ReactNode;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 export const MyButton: FC<MyButtonProps> = (props) => {

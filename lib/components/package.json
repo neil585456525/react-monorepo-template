@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "unit:test": "vitest",
+    "ct:test": "playwright test -c playwright-ct.config.ts",
+    "ct:debug": "playwright test -c playwright-ct.config.ts --debug",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -15,6 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.37.1",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
     "@storybook/addon-links": "^7.4.0",
