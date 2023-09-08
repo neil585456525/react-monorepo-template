@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/experimental-ct-react';
-import { MyButton } from './index';
+import { MyButton } from '../index';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
