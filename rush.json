@@ -314,6 +314,10 @@
       "projectFolder": "app/admin"
     },
     {
+      "packageName": "config",
+      "projectFolder": "lib/config"
+    },
+    {
       "packageName": "components",
       "projectFolder": "lib/components"
     },
