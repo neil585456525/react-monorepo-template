@@ -125,10 +125,12 @@ importers:
 
   ../../lib/utils:
     specifiers:
+      '@testing-library/react': ~13.3.0
       '@types/react': ^18.2.15
       '@types/react-dom': ^18.2.7
       '@typescript-eslint/eslint-plugin': ^6.0.0
       '@typescript-eslint/parser': ^6.0.0
+      '@vitejs/plugin-react': ^4.0.4
       config: workspace:*
       eslint: ^8.45.0
       eslint-plugin-react-hooks: ^4.6.0
@@ -136,19 +138,25 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^5.0.2
+      vite: ^3.2.1
+      vitest: ~0.34.4
     dependencies:
       config: link:../config
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
+      '@testing-library/react': 13.3.0_react-dom@18.2.0+react@18.2.0
       '@types/react': 18.2.21
       '@types/react-dom': 18.2.7
       '@typescript-eslint/eslint-plugin': 6.6.0_acf920124dd9040a30189b7b6c8591b9
       '@typescript-eslint/parser': 6.6.0_eslint@8.48.0+typescript@5.2.2
+      '@vitejs/plugin-react': 4.0.4_vite@3.2.7
       eslint: 8.48.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.48.0
       eslint-plugin-react-refresh: 0.4.3_eslint@8.48.0
       typescript: 5.2.2
+      vite: 3.2.7
+      vitest: 0.34.4
 
 packages:
   /@aashutoshrathi/word-wrap/1.2.6:
@@ -13174,6 +13182,74 @@ packages:
       rollup: 3.29.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /vitest/0.34.4:
+    resolution:
+      {
+        integrity: sha512-SE/laOsB6995QlbSE6BtkpXDeVNLJc1u2LHRG/OpnN4RsRzM3GQm4nm3PQCK5OBtrsUqnhzLdnT7se3aeNGdlw==,
+      }
+    engines: { node: '>=v14.18.0' }
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@vitest/browser': '*'
+      '@vitest/ui': '*'
+      happy-dom: '*'
+      jsdom: '*'
+      playwright: '*'
+      safaridriver: '*'
+      webdriverio: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+      playwright:
+        optional: true
+      safaridriver:
+        optional: true
+      webdriverio:
+        optional: true
+    dependencies:
+      '@types/chai': 4.3.6
+      '@types/chai-subset': 1.3.3
+      '@types/node': 20.5.9
+      '@vitest/expect': 0.34.4
+      '@vitest/runner': 0.34.4
+      '@vitest/snapshot': 0.34.4
+      '@vitest/spy': 0.34.4
+      '@vitest/utils': 0.34.4
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      cac: 6.7.14
+      chai: 4.3.8
+      debug: 4.3.4
+      local-pkg: 0.4.3
+      magic-string: 0.30.3
+      pathe: 1.1.1
+      picocolors: 1.0.0
+      std-env: 3.4.3
+      strip-literal: 1.3.0
+      tinybench: 2.5.0
+      tinypool: 0.7.0
+      vite: 4.4.9_@types+node@20.5.9
+      vite-node: 0.34.4_@types+node@20.5.9
+      why-is-node-running: 2.2.2
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
     dev: true
 
   /vitest/0.34.4_jsdom@19.0.0:
