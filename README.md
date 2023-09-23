@@ -15,6 +15,7 @@ Here's the current progress on the implementation of the above features in this 
 - [x] Build Configurations
 - [x] Unit Testing with ViTest
 - [x] Storybook for Component Libraries
+- [ ] Components Libraries with Playwright
 - [ ] Integration Testing with Playwright
 - [ ] Continuous Integration/Continuous Deployment (CI/CD) with GitHub Actions
 
