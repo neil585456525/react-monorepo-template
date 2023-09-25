@@ -1,0 +1,36 @@
+{
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "description": "Graphql generator management",
+  "main": "src/index.tsx",
+  "scripts": {
+    "gql:gen": "graphql-codegen --config codegen.ts",
+    "gql:update-schema": "ts-node --project tsconfig.scripts.json scripts/downloadSchema.mts "
+  },
+  "license": "ISC",
+  "dependencies": {
+    "config": "workspace:*"
+  },
+  "devDependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "typescript": "^5.0.4",
+    "@tanstack/react-query": "^4.14.5",
+    "graphql": "16.6.0",
+    "@types/react": "17.0.43",
+    "@types/react-dom": "^18.0.3",
+    "@graphql-codegen/cli": "^2.12.0",
+    "@graphql-codegen/introspection": "^2.1.1",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-document-nodes": "^2.2.8",
+    "@neil585456525/typescript-msw": "~1.1.7",
+    "msw": "^1.2.1",
+    "octokit": "~2.0.10",
+    "ts-node": "~10.9.1",
+    "graphql-codegen-typescript-mock-data": "~2.6.0",
+    "@graphql-codegen/plugin-helpers": "~2.7.2",
+    "@types/node": "~20.1.4",
+    "@graphql-codegen/visitor-plugin-common": "~4.0.1",
+    "@graphql-codegen/client-preset": "~4.1.0"
+  }
+}

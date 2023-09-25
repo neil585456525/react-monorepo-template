@@ -2,5 +2,10 @@
   "name": "config",
   "private": true,
   "version": "0.0.0",
-  "type": "module"
+  "type": "module",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/node": "~20.1.4",
+    "typescript": "^5.0.4"
+  }
 }

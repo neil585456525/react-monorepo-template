@@ -1,0 +1,43 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  price: Float!
+  description: String!
+  image: String!
+  user: User!
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User
+  products: [Product!]!
+  product(id: ID!): Product
+}
+
+type Mutation {
+  createProduct(
+    name: String!
+    price: Float!
+    description: String!
+    image: String!
+  ): Product!
+  updateProduct(
+    id: ID!
+    name: String
+    price: Float
+    description: String
+    image: String
+  ): Product!
+  deleteProduct(id: ID!): Product!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
