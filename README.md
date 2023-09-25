@@ -13,10 +13,13 @@ This repository serves as a robust template to kickstart your development of mul
 Here's the current progress on the implementation of the above features in this template:
 
 - [x] Build Configurations
-- [x] Unit Testing with ViTest
+- [x] Commit Hook with Prettier
+- [x] Unit Testing with Vitest & React Hook Test Library
 - [x] Storybook for Component Libraries
-- [ ] Components Libraries with Playwright
+- [x] Components Libraries with Playwright
 - [ ] Integration Testing with Playwright
+- [ ] Graphql with Client & Mock Data Codegen
+- [ ] Restful Api with Client & Mock Data Codegen
 - [ ] Continuous Integration/Continuous Deployment (CI/CD) with GitHub Actions
 
 ## Getting Started
