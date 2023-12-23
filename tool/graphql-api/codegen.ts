@@ -70,11 +70,6 @@ const appApiConfigs: AppApiConfig[] = [
     dist: 'app/website/src/gql',
     apis: ['api1'],
   },
-  {
-    name: 'integration-test',
-    dist: 'lib/test/integration/gql',
-    apis: ['api1', 'api2'],
-  },
 ];
 
 const getCodegenConfigGenerates = () => {
@@ -86,9 +81,8 @@ const getCodegenConfigGenerates = () => {
   const addProjectCodegenConfig = (payload: {
     projectDist: string;
     apiTypeName: ApiType;
-    fetcherFnName: string;
   }) => {
-    const { projectDist, apiTypeName, fetcherFnName } = payload;
+    const { projectDist, apiTypeName } = payload;
 
     const schema = `schema.${apiTypeName}.gql`;
     const documents = `../../${projectDist}/documents/${apiTypeName}/*.gql`;
@@ -98,7 +92,7 @@ const getCodegenConfigGenerates = () => {
       schema,
       documents,
       config: {
-        fetcher: `api#${fetcherFnName}`,
+        fetcher: { endpoint: apiEndpoint[apiTypeName] + '/graphql' },
         ...shareConfig.config,
       },
       plugins: shareConfig.plugins.api,
@@ -110,7 +104,7 @@ const getCodegenConfigGenerates = () => {
       config: shareConfig.config,
       plugins: getMockPluginConfig({
         mswLink: {
-          endpoint: apiEndpoint.api1,
+          endpoint: apiEndpoint[apiTypeName] + '/graphql',
         },
       }),
     };
@@ -121,7 +115,6 @@ const getCodegenConfigGenerates = () => {
       addProjectCodegenConfig({
         projectDist: projectItem.dist,
         apiTypeName: 'api1',
-        fetcherFnName: 'api1Fetcher',
       });
     }
 
@@ -129,7 +122,6 @@ const getCodegenConfigGenerates = () => {
       addProjectCodegenConfig({
         projectDist: projectItem.dist,
         apiTypeName: 'api2',
-        fetcherFnName: 'api2Fetcher',
       });
     }
   });
