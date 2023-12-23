@@ -326,6 +326,10 @@
       "projectFolder": "lib/utils"
     },
     {
+      "packageName": "test",
+      "projectFolder": "lib/test"
+    },
+    {
       "packageName": "graphql-api",
       "projectFolder": "tool/graphql-api"
     }

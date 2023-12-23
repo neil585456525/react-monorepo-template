@@ -10,9 +10,6 @@ const shareConfig = {
     },
     maybeValue: 'T',
     defaultScalarType: 'string',
-    scalars: {
-      AWSTimestamp: 'number',
-    },
   },
   plugins: {
     api: [
@@ -41,7 +38,7 @@ const getMockPluginConfig = (config: { mswLink: { endpoint: string } }) => {
     'typescript',
     'typescript-operations',
     {
-      '@neil585456525/typescript-msw': {
+      'typescript-msw': {
         link: { ...config.mswLink, name: 'apiLink', withSuffix: false },
       },
     },
@@ -49,12 +46,6 @@ const getMockPluginConfig = (config: { mswLink: { endpoint: string } }) => {
       'typescript-mock-data': {
         terminateCircularRelationships: true,
         prefix: 'a',
-        scalars: {
-          String: 'uuid',
-          AWSJSON: '"{}"',
-          AWSTimestamp: { generator: 'unix_time' },
-          AWSEmail: { generator: 'email' },
-        },
       },
     },
   ];
@@ -90,9 +81,8 @@ const getCodegenConfigGenerates = () => {
   const addProjectCodegenConfig = (payload: {
     projectDist: string;
     apiTypeName: ApiType;
-    fetcherFnName: string;
   }) => {
-    const { projectDist, apiTypeName, fetcherFnName } = payload;
+    const { projectDist, apiTypeName } = payload;
 
     const schema = `schema.${apiTypeName}.gql`;
     const documents = `../../${projectDist}/documents/${apiTypeName}/*.gql`;
@@ -102,7 +92,7 @@ const getCodegenConfigGenerates = () => {
       schema,
       documents,
       config: {
-        fetcher: `api#${fetcherFnName}`,
+        fetcher: { endpoint: apiEndpoint[apiTypeName] + '/graphql' },
         ...shareConfig.config,
       },
       plugins: shareConfig.plugins.api,
@@ -114,7 +104,7 @@ const getCodegenConfigGenerates = () => {
       config: shareConfig.config,
       plugins: getMockPluginConfig({
         mswLink: {
-          endpoint: apiEndpoint.api1,
+          endpoint: apiEndpoint[apiTypeName] + '/graphql',
         },
       }),
     };
@@ -125,7 +115,6 @@ const getCodegenConfigGenerates = () => {
       addProjectCodegenConfig({
         projectDist: projectItem.dist,
         apiTypeName: 'api1',
-        fetcherFnName: 'api1Fetcher',
       });
     }
 
@@ -133,7 +122,6 @@ const getCodegenConfigGenerates = () => {
       addProjectCodegenConfig({
         projectDist: projectItem.dist,
         apiTypeName: 'api2',
-        fetcherFnName: 'api2Fetcher',
       });
     }
   });
@@ -142,7 +130,6 @@ const getCodegenConfigGenerates = () => {
 };
 
 const config: CodegenConfig = {
-  schema: 'aws-type.gql',
   generates: getCodegenConfigGenerates(),
 };
 
