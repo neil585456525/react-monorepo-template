@@ -6,4 +6,26 @@
 # Invoke the "rush prettier" custom command to reformat files whenever they
 # are committed. The command is defined in common/config/rush/command-line.json
 # and uses the "rush-prettier" autoinstaller.
+# Function to check if Node.js is available
+check_node() {
+  if ! type "node" >/dev/null; then
+    # Node is not available, setup nvm
+    echo "Node not found, setting up nvm..."
+
+    # The directory of your nvm installation
+    export NVM_DIR="$HOME/.nvm"
+
+    # Load nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    # Optionally use a specific Node version or the default one
+    # nvm use 14 # Uncomment and replace '14' with your desired version, if needed
+  else
+    echo "Node found: $(node --version)"
+  fi
+}
+
+# Check if Node.js is available
+check_node
+
 node common/scripts/install-run-rush.js prettier || exit $?
