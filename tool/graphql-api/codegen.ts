@@ -10,9 +10,6 @@ const shareConfig = {
     },
     maybeValue: 'T',
     defaultScalarType: 'string',
-    scalars: {
-      AWSTimestamp: 'number',
-    },
   },
   plugins: {
     api: [
@@ -41,7 +38,7 @@ const getMockPluginConfig = (config: { mswLink: { endpoint: string } }) => {
     'typescript',
     'typescript-operations',
     {
-      '@neil585456525/typescript-msw': {
+      'typescript-msw': {
         link: { ...config.mswLink, name: 'apiLink', withSuffix: false },
       },
     },
@@ -49,12 +46,6 @@ const getMockPluginConfig = (config: { mswLink: { endpoint: string } }) => {
       'typescript-mock-data': {
         terminateCircularRelationships: true,
         prefix: 'a',
-        scalars: {
-          String: 'uuid',
-          AWSJSON: '"{}"',
-          AWSTimestamp: { generator: 'unix_time' },
-          AWSEmail: { generator: 'email' },
-        },
       },
     },
   ];
@@ -78,6 +69,11 @@ const appApiConfigs: AppApiConfig[] = [
     name: 'website',
     dist: 'app/website/src/gql',
     apis: ['api1'],
+  },
+  {
+    name: 'integration-test',
+    dist: 'lib/test/integration/gql',
+    apis: ['api1', 'api2'],
   },
 ];
 
@@ -142,7 +138,6 @@ const getCodegenConfigGenerates = () => {
 };
 
 const config: CodegenConfig = {
-  schema: 'aws-type.gql',
   generates: getCodegenConfigGenerates(),
 };
 

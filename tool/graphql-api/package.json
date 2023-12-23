@@ -4,8 +4,7 @@
   "description": "Graphql generator management",
   "main": "src/index.tsx",
   "scripts": {
-    "gql:gen": "graphql-codegen --config codegen.ts",
-    "gql:update-schema": "ts-node --project tsconfig.scripts.json scripts/downloadSchema.mts "
+    "gql:gen": "graphql-codegen --config codegen.ts"
   },
   "license": "ISC",
   "dependencies": {
@@ -23,7 +22,8 @@
     "@graphql-codegen/introspection": "^2.1.1",
     "@graphql-codegen/typescript": "^2.4.8",
     "@graphql-codegen/typescript-document-nodes": "^2.2.8",
-    "@neil585456525/typescript-msw": "~1.1.7",
+    "@graphql-codegen/typescript-msw": "~2.1.0",
+    "@graphql-codegen/typescript-react-query": "5.0.0",
     "msw": "^1.2.1",
     "octokit": "~2.0.10",
     "ts-node": "~10.9.1",

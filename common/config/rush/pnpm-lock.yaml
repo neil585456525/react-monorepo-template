@@ -14,6 +14,7 @@ importers:
       eslint: ^8.45.0
       eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-react-refresh: ^0.4.3
+      msw: ~2.0.11
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^5.0.2
@@ -30,6 +31,7 @@ importers:
       eslint: 8.48.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.48.0
       eslint-plugin-react-refresh: 0.4.3_eslint@8.48.0
+      msw: 2.0.11_typescript@5.2.2
       typescript: 5.2.2
       vite: 4.4.9
 
@@ -128,6 +130,47 @@ importers:
       '@types/node': 20.1.7
       typescript: 5.2.2
 
+  ../../lib/test:
+    specifiers:
+      '@playwright/test': ~1.40.1
+      '@testing-library/react': ~13.3.0
+      '@types/react': ^18.2.15
+      '@types/react-dom': ^18.2.7
+      '@typescript-eslint/eslint-plugin': ^6.0.0
+      '@typescript-eslint/parser': ^6.0.0
+      '@vitejs/plugin-react': ^4.0.4
+      config: workspace:*
+      eslint: ^8.45.0
+      eslint-plugin-react-hooks: ^4.6.0
+      eslint-plugin-react-refresh: ^0.4.3
+      msw: ~2.0.11
+      playwright-msw: ~3.0.1
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^5.0.2
+      vite: ^3.2.1
+      vitest: ~0.34.4
+    dependencies:
+      config: link:../config
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@playwright/test': 1.40.1
+      '@testing-library/react': 13.3.0_react-dom@18.2.0+react@18.2.0
+      '@types/react': 18.2.21
+      '@types/react-dom': 18.2.7
+      '@typescript-eslint/eslint-plugin': 6.6.0_acf920124dd9040a30189b7b6c8591b9
+      '@typescript-eslint/parser': 6.6.0_eslint@8.48.0+typescript@5.2.2
+      '@vitejs/plugin-react': 4.0.4_vite@3.2.7
+      eslint: 8.48.0
+      eslint-plugin-react-hooks: 4.6.0_eslint@8.48.0
+      eslint-plugin-react-refresh: 0.4.3_eslint@8.48.0
+      msw: 2.0.11_typescript@5.2.2
+      playwright-msw: 3.0.1_5aceca46ac3976400e7d15d60ae430ff
+      typescript: 5.2.2
+      vite: 3.2.7
+      vitest: 0.34.4
+
   ../../lib/utils:
     specifiers:
       '@testing-library/react': ~13.3.0
@@ -171,8 +214,9 @@ importers:
       '@graphql-codegen/plugin-helpers': ~2.7.2
       '@graphql-codegen/typescript': ^2.4.8
       '@graphql-codegen/typescript-document-nodes': ^2.2.8
+      '@graphql-codegen/typescript-msw': ~2.1.0
+      '@graphql-codegen/typescript-react-query': 5.0.0
       '@graphql-codegen/visitor-plugin-common': ~4.0.1
-      '@neil585456525/typescript-msw': ~1.1.7
       '@tanstack/react-query': ^4.14.5
       '@types/node': ~20.1.4
       '@types/react': 17.0.43
@@ -195,8 +239,9 @@ importers:
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
       '@graphql-codegen/typescript': 2.8.8_graphql@16.6.0
       '@graphql-codegen/typescript-document-nodes': 2.3.13_graphql@16.6.0
+      '@graphql-codegen/typescript-msw': 2.1.0_graphql@16.6.0
+      '@graphql-codegen/typescript-react-query': 5.0.0_graphql@16.6.0
       '@graphql-codegen/visitor-plugin-common': 4.0.1_graphql@16.6.0
-      '@neil585456525/typescript-msw': 1.1.7_graphql@16.6.0
       '@tanstack/react-query': 4.35.3
       '@types/node': 20.1.7
       '@types/react': 17.0.43
@@ -2036,6 +2081,33 @@ packages:
       }
     dev: true
 
+  /@bundled-es-modules/cookie/2.0.0:
+    resolution:
+      {
+        integrity: sha512-Or6YHg/kamKHpxULAdSqhGqnWFneIXu1NKvvfBBzKGwpVsYuFIQ5aBPHDnnoR3ghW1nvSkALd+EF9iMtY7Vjxw==,
+      }
+    dependencies:
+      cookie: 0.5.0
+    dev: true
+
+  /@bundled-es-modules/js-levenshtein/2.0.1:
+    resolution:
+      {
+        integrity: sha512-DERMS3yfbAljKsQc0U2wcqGKUWpdFjwqWuoMugEJlqBnKO180/n+4SR/J8MRDt1AN48X1ovgoD9KrdVXcaa3Rg==,
+      }
+    dependencies:
+      js-levenshtein: 1.1.6
+    dev: true
+
+  /@bundled-es-modules/statuses/1.0.1:
+    resolution:
+      {
+        integrity: sha512-yn7BklA5acgcBr+7w064fGV+SGIFySjCKpqjcWgBAIfrAkY+4GQTJJHQMeT3V/sgz23VTEVV8TtOmkvJAhFVfg==,
+      }
+    dependencies:
+      statuses: 2.0.1
+    dev: true
+
   /@colors/colors/1.5.0:
     resolution:
       {
@@ -2704,6 +2776,26 @@ packages:
       - supports-color
     dev: true
 
+  /@graphql-codegen/typescript-msw/2.1.0_graphql@16.6.0:
+    resolution:
+      {
+        integrity: sha512-KjwFVT01FeZEFeHt1TaPj7EYUibdj2pX6fFXu7TyyrkYw2f5P4wnRfBqX8WWHvuL6eFj5c17EKCSuyDf1A3Xpw==,
+      }
+    engines: { node: '>= 16.0.0' }
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-codegen/plugin-helpers': 3.1.2_graphql@16.6.0
+      '@graphql-codegen/visitor-plugin-common': 2.13.1_graphql@16.6.0
+      auto-bind: 4.0.0
+      change-case-all: 1.0.15
+      graphql: 16.6.0
+      tslib: 2.6.2
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
   /@graphql-codegen/typescript-operations/4.0.1_graphql@16.6.0:
     resolution:
       {
@@ -2718,6 +2810,26 @@ packages:
       auto-bind: 4.0.0
       graphql: 16.6.0
       tslib: 2.5.3
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@graphql-codegen/typescript-react-query/5.0.0_graphql@16.6.0:
+    resolution:
+      {
+        integrity: sha512-UjW18hcW6GqtwdHPS36zd8fbXoqBhhGc6HGVfqsZLnOVlGfMTiCY9tqK6Lu61F3TFrfUu3L7ACab1pZMOHpnWQ==,
+      }
+    engines: { node: '>= 16.0.0' }
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-codegen/plugin-helpers': 3.1.2_graphql@16.6.0
+      '@graphql-codegen/visitor-plugin-common': 2.13.1_graphql@16.6.0
+      auto-bind: 4.0.0
+      change-case-all: 1.0.15
+      graphql: 16.6.0
+      tslib: 2.6.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -3564,6 +3676,14 @@ packages:
       set-cookie-parser: 2.6.0
     dev: true
 
+  /@mswjs/cookies/1.1.0:
+    resolution:
+      {
+        integrity: sha512-0ZcCVQxifZmhwNBoQIrystCb+2sWBY2Zw8lpfJBPCHGCA/HWqehITeCRVIv4VMy8MPlaHo2w2pTHFV2pFfqKPw==,
+      }
+    engines: { node: '>=18' }
+    dev: true
+
   /@mswjs/interceptors/0.17.10:
     resolution:
       {
@@ -3583,6 +3703,21 @@ packages:
       - supports-color
     dev: true
 
+  /@mswjs/interceptors/0.25.13:
+    resolution:
+      {
+        integrity: sha512-xfjR81WwXPHwhDbqJRHlxYmboJuiSaIKpP4I5TJVFl/EmByOU13jOBT9hmEnxcjR3jvFYoqoNKt7MM9uqerj9A==,
+      }
+    engines: { node: '>=18' }
+    dependencies:
+      '@open-draft/deferred-promise': 2.2.0
+      '@open-draft/logger': 0.3.0
+      '@open-draft/until': 2.1.0
+      is-node-process: 1.2.0
+      outvariant: 1.4.0
+      strict-event-emitter: 0.5.1
+    dev: true
+
   /@ndelangen/get-tarball/3.0.9:
     resolution:
       {
@@ -3592,26 +3727,6 @@ packages:
       gunzip-maybe: 1.4.2
       pump: 3.0.0
       tar-fs: 2.1.1
-    dev: true
-
-  /@neil585456525/typescript-msw/1.1.7_graphql@16.6.0:
-    resolution:
-      {
-        integrity: sha512-r1qhek2PFXAbkD/WoT96VnTpYf7yrO+3sGG1UZ89iDWFbReYKJJdU66hXT85DmKHsn5b8JSuBciPZEfcI6ibnw==,
-      }
-    engines: { node: '>= 16.0.0' }
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2_graphql@16.6.0
-      '@graphql-codegen/visitor-plugin-common': 2.13.1_graphql@16.6.0
-      auto-bind: 4.0.0
-      change-case-all: 1.0.15
-      graphql: 16.6.0
-      tslib: 2.4.1
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
     dev: true
 
   /@next/env/13.4.19:
@@ -4095,10 +4210,34 @@ packages:
       aggregate-error: 3.1.0
     dev: true
 
+  /@open-draft/deferred-promise/2.2.0:
+    resolution:
+      {
+        integrity: sha512-CecwLWx3rhxVQF6V4bAgPS5t+So2sTbPgAzafKkVizyi7tlwpcFpdFqq+wqF2OwNBmqFuu6tOyouTuxgpMfzmA==,
+      }
+    dev: true
+
+  /@open-draft/logger/0.3.0:
+    resolution:
+      {
+        integrity: sha512-X2g45fzhxH238HKO4xbSr7+wBS8Fvw6ixhTDuvLd5mqh6bJJCFAPwU9mPDxbcrRtfxv4u5IHCEH77BmxvXmmxQ==,
+      }
+    dependencies:
+      is-node-process: 1.2.0
+      outvariant: 1.4.0
+    dev: true
+
   /@open-draft/until/1.0.3:
     resolution:
       {
         integrity: sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==,
+      }
+    dev: true
+
+  /@open-draft/until/2.1.0:
+    resolution:
+      {
+        integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==,
       }
     dev: true
 
@@ -4201,6 +4340,17 @@ packages:
       playwright-core: 1.37.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /@playwright/test/1.40.1:
+    resolution:
+      {
+        integrity: sha512-EaaawMTOeEItCRvfmkI9v6rBkF1svM8wjl/YPRrg2N2Wmp+4qJYkWtJsbew1szfKKDm6fPLy4YAanBhIlf9dWw==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dependencies:
+      playwright: 1.40.1
     dev: true
 
   /@radix-ui/number/1.0.1:
@@ -6589,6 +6739,13 @@ packages:
       }
     dependencies:
       '@types/node': 20.5.9
+    dev: true
+
+  /@types/statuses/2.0.4:
+    resolution:
+      {
+        integrity: sha512-eqNDvZsCNY49OAXB0Firg/Sc2BgoWsntsLUdybGFOhAfCD6QJ2n9HXUIHGqt5qjrxmMv4wS8WLAw43ZkKcJ8Pw==,
+      }
     dev: true
 
   /@types/unist/2.0.8:
@@ -10943,6 +11100,14 @@ packages:
     engines: { node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0 }
     dev: true
 
+  /graphql/16.8.1:
+    resolution:
+      {
+        integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==,
+      }
+    engines: { node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0 }
+    dev: true
+
   /gunzip-maybe/1.4.2:
     resolution:
       {
@@ -11049,6 +11214,13 @@ packages:
     resolution:
       {
         integrity: sha512-tUCGvt191vNSQgttSyJoibR+VO+I6+iCHIUdhzEMJKE+EAL8BwCN7fUOZlY4ofOelNHsK+gEjxB/B+9N3EWtdA==,
+      }
+    dev: true
+
+  /headers-polyfill/4.0.2:
+    resolution:
+      {
+        integrity: sha512-EWGTfnTqAO2L/j5HZgoM/3z82L7necsJ0pO9Tp0X1wil3PDLrkypTBRgVO2ExehEEvUycejZD3FuRaXpZZc3kw==,
       }
     dev: true
 
@@ -13005,6 +13177,44 @@ packages:
       - supports-color
     dev: true
 
+  /msw/2.0.11_typescript@5.2.2:
+    resolution:
+      {
+        integrity: sha512-dAXFS2DxZX0uFqMPhS3oUAu8S/5IQ5qKKSwtXl3/dMTeML0C8JfSvbeWtowYg6pu4Iehgp5L/pHLrlIcG++y/A==,
+      }
+    engines: { node: '>=18' }
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      typescript: '>= 4.7.x <= 5.2.x'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@bundled-es-modules/cookie': 2.0.0
+      '@bundled-es-modules/js-levenshtein': 2.0.1
+      '@bundled-es-modules/statuses': 1.0.1
+      '@mswjs/cookies': 1.1.0
+      '@mswjs/interceptors': 0.25.13
+      '@open-draft/until': 2.1.0
+      '@types/cookie': 0.4.1
+      '@types/js-levenshtein': 1.1.1
+      '@types/statuses': 2.0.4
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      graphql: 16.8.1
+      headers-polyfill: 4.0.2
+      inquirer: 8.2.6
+      is-node-process: 1.2.0
+      js-levenshtein: 1.1.6
+      outvariant: 1.4.0
+      path-to-regexp: 6.2.1
+      strict-event-emitter: 0.5.1
+      type-fest: 2.19.0
+      typescript: 5.2.2
+      yargs: 17.7.2
+    dev: true
+
   /mute-stream/0.0.8:
     resolution:
       {
@@ -13797,6 +14007,44 @@ packages:
       }
     engines: { node: '>=16' }
     hasBin: true
+    dev: true
+
+  /playwright-core/1.40.1:
+    resolution:
+      {
+        integrity: sha512-+hkOycxPiV534c4HhpfX6yrlawqVUzITRKwHAmYfmsVreltEl6fAZJ3DPfLMOODw0H3s1Itd6MDCWmP1fl/QvQ==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dev: true
+
+  /playwright-msw/3.0.1_5aceca46ac3976400e7d15d60ae430ff:
+    resolution:
+      {
+        integrity: sha512-w2bVjt7kPIThOQF9OS/1vDDs0HsQfV9inxMVSUv74x/zhCcrgzVN47xpPk84okf3OcCRHHBJKq8sNeBfCDyhMg==,
+      }
+    engines: { node: '>=18' }
+    peerDependencies:
+      '@playwright/test': '>=1.20.0'
+      msw: ^2.0.0
+    dependencies:
+      '@mswjs/cookies': 1.1.0
+      '@playwright/test': 1.40.1
+      msw: 2.0.11_typescript@5.2.2
+      strict-event-emitter: 0.5.1
+    dev: true
+
+  /playwright/1.40.1:
+    resolution:
+      {
+        integrity: sha512-2eHI7IioIpQ0bS1Ovg/HszsN/XKNwEG1kbzSDDmADpclKc7CyqkHw7Mg2JCz/bbCxg25QUPcjksoMW7JcIFQmw==,
+      }
+    engines: { node: '>=16' }
+    hasBin: true
+    dependencies:
+      playwright-core: 1.40.1
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /polished/4.2.2:
@@ -15277,6 +15525,13 @@ packages:
     resolution:
       {
         integrity: sha512-12KWeb+wixJohmnwNFerbyiBrAlq5qJLwIt38etRtKtmmHyDSoGlIqFE9wx+4IwG0aDjI7GV8tc8ZccjWZZtTg==,
+      }
+    dev: true
+
+  /strict-event-emitter/0.5.1:
+    resolution:
+      {
+        integrity: sha512-vMgjE/GGEPEFnhFub6pa4FmJBRBVOLpIII2hvCZ8Kzb7K0hlHo7mQv6xYrBvCL2LtAIBwFUK8wvuJgTVSQ5MFQ==,
       }
     dev: true
 
